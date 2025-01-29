@@ -1,7 +1,9 @@
 # pCO2Residual_Testbed
 Code to implement Bennington et al. 2022 JAMES using CMIP6 testbed.
+Code and documentation in progress!
 
 Brief summary on each notebook:
+- residual_utils:
 - 00_regridding_members :
 - 01_create_ML_inputs :
 - 02_xgboost :
