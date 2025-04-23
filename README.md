@@ -4,7 +4,7 @@ Code and documentation in progress!
 
 Brief summary on each notebook:
 - residual_utils: Files with supporting functions
-- 00_regridding_members :
+- 00_regridding_members : CMIP6 member selection and re-gridding 
 - 01_create_ML_inputs : Creates a dataframe with all variables needed to run notebook 02
 - 02_xgboost : Reconstructs pCO2-Residual using XGBoost
 - 03_add_back_pco2-T : Adds pCO2-T to pCO2-Residual to get pCO2
