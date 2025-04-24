@@ -10,6 +10,6 @@ Brief summary on each notebook:
 - 02_xgboost : Reconstructs pCO2-Residual using XGBoost
 - 03_add_back_pco2-T : Adds pCO2-T to pCO2-Residual to get pCO2
 
-If you want to follow our process from beginning to end, start with notebook 00 and work through notebook 03. Otherwise, if you want to use our already-made testbed, work through notebook 02 and 03. The processed testbed files (produced after running notebook 00 and 01), are publicly accessible on the LEAP OSN pod; switch to the following path: https://nyu1.osn.mghpcc.org/leap-pangeo-manual/pco2_all_members_1982-2022/post01_xgb_inputs.   
+If you want to follow our process from beginning to end, start with notebook 00 and work through notebook 03. Otherwise, if you want to use our already-made testbed, work through notebook 02 and 03. The processed testbed files (produced after running notebook 00 and 01), are publicly accessible on the LEAP OSN pod; switch the "MLinputs_path" to the following path: https://nyu1.osn.mghpcc.org/leap-pangeo-manual/pco2_all_members_1982-2022/post01_xgb_inputs.  
 
 The folder named "Figures_Heimdal_et_al_2025" includes notebooks for figures and calculations presented in Heimdal et al. (2025): https://eartharxiv.org/repository/view/8958/
