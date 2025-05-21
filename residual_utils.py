@@ -2,6 +2,7 @@
 from pathlib import Path
 import numpy as np
 import xarray as xr
+import pickle
 import pandas as pd
 from skimage.filters import sobel
 from sklearn.model_selection import train_test_split
@@ -46,7 +47,7 @@ def network_mask(topo_path,lsmask_path):
     
     ### topography
     topo_file_ext = topo_path.split('.')[-1] # getting if zarr or nc
-    ds_topo = xr.open_mfdataset(topo_path, engine=topo_file_ext)
+    ds_topo = xr.open_dataset(topo_path, engine=topo_file_ext)
     ds_topo = ds_topo.roll(lon=180, roll_coords='lon')
     ds_topo['lon'] = np.arange(0.5, 360, 1)
 
@@ -55,7 +56,7 @@ def network_mask(topo_path,lsmask_path):
     # land=0, sea=1
     
     lsmask_file_ext = topo_path.split('.')[-1] # getting if zarr or nc
-    ds_lsmask = xr.open_mfdataset(lsmask_path, engine=lsmask_file_ext).sortby('lat').squeeze().drop('time')
+    ds_lsmask = xr.open_dataset(lsmask_path, engine=lsmask_file_ext).sortby('lat').squeeze().drop('time')
     data = ds_lsmask['mask'].where(ds_lsmask['mask']==1)
     
     ### Define Latitude and Longitude
@@ -265,10 +266,10 @@ def import_member_data(ensemble_dir_head, ens, member,
 
     chl_clim_path = fs.glob(f"{ensemble_dir_head}/{ens}/{member}/chlclim*.{files_ext}")[0]
 
-    member_data = xr.open_mfdataset('gs://'+member_path, engine=file_engine).sel(time=slice(str(dates[0]),str(dates[-1])))
-    socat_mask_data = xr.open_mfdataset(socat_path, engine=file_engine).sel(time=slice(str(dates[0]),str(dates[-1])))
-    tmp = xr.open_mfdataset('gs://'+chl_clim_path, engine=file_engine).chl_clim
-    xco2 = xr.open_mfdataset(xco2_path, engine=file_engine).sel(time=slice(str(dates[0]),str(dates[-1])))
+    member_data = xr.open_dataset('gs://'+member_path, engine=file_engine).sel(time=slice(str(dates[0]),str(dates[-1])))
+    socat_mask_data = xr.open_dataset(socat_path, engine=file_engine).sel(time=slice(str(dates[0]),str(dates[-1])))
+    tmp = xr.open_dataset('gs://'+chl_clim_path, engine=file_engine).chl_clim
+    xco2 = xr.open_dataset(xco2_path, engine=file_engine).sel(time=slice(str(dates[0]),str(dates[-1])))
      
     inputs = {}
     
@@ -642,8 +643,9 @@ def save_model(model, dates, model_output_dir, ens, member):
 
     model_fname = f"{model_dir}/model_pC02_2D_{ens}_{member.split('_')[-1]}_mon_1x1_{init_date}_{fin_date}.json"
 
-    Path(model_dir).mkdir(parents=True, exist_ok=True)
-    model.save_model(model_fname)
+    with fs.open(model_fname, "wb") as remote:
+        pickle.dump(model,remote)
+    
     print("Save complete")
 
 def save_recon(DS_recon, dates, recon_output_dir, ens, member):
