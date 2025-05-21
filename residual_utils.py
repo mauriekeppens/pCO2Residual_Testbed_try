@@ -641,7 +641,7 @@ def save_model(model, dates, model_output_dir, ens, member):
     
     model_dir = f"{model_output_dir}/{ens}/{member}"
 
-    model_fname = f"{model_dir}/model_pC02_2D_{ens}_{member.split('_')[-1]}_mon_1x1_{init_date}_{fin_date}.json"
+    model_fname = f"{model_dir}/model_pCO2_2D_{ens}_{member.split('_')[-1]}_mon_1x1_{init_date}_{fin_date}.json"
 
     with fs.open(model_fname, "wb") as remote:
         pickle.dump(model,remote)
@@ -679,7 +679,7 @@ def save_recon(DS_recon, dates, recon_output_dir, ens, member):
     
     recon_dir = f"{recon_output_dir}/{ens}/{member}"
     
-    recon_fname = f"{recon_dir}/recon_pC02residual_{ens}_{member}_mon_1x1_{init_date}_{fin_date}.zarr"
+    recon_fname = f"{recon_dir}/recon_pCO2residual_{ens}_{member}_mon_1x1_{init_date}_{fin_date}.zarr"
 
     print(recon_fname)
     DS_recon.to_zarr(f'{recon_fname}', mode='w')
