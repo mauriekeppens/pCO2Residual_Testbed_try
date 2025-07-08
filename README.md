@@ -19,64 +19,63 @@ If you want to use the processed testbed pickle files, but you do not wish to us
 
 The testbed is structured as follows: within the "post01_xgb_inputs" folder, there are 9 sub-folders, one for each of the Earth System Models (ESM) in the testbed (see overview below; see also Heimdal et al., 2025). Within each of the 9 folders, there are sub-folders representing each member per ESM. Note that the number of members vary between each ESM. Within each member folder, there is one pickle file including the target and all driver variables. There is a total of 45 individual pickle files (one per member). 
 
-ACCESS-ESM1-5
-  -member_r4i1p1f1
-  -member_r5i1p1f1
+ACCESS-ESM1-5:
+  member_r4i1p1f1
+  member_r5i1p1f1
 
-CESM2
-  -member_r10i1p1f1
-  -member_r11i1p1f1
-  -member_r4i1p1f1
+CESM2:
+  member_r10i1p1f1
+  member_r11i1p1f1
+  member_r4i1p1f1
 
-CESM2-WACCM
-  -member_r1i1p1f1
-  -member_r2i1p1f1
-  -member_r3i1p1f1
+CESM2-WACCM:
+  member_r1i1p1f1
+  member_r2i1p1f1
+  member_r3i1p1f1
 
-CMCC-ESM2
-  -member_r1i1p1f1
+CMCC-ESM2:
+  member_r1i1p1f1
 
-CanESM5
-  -member_r10i1p2f1
-  -member_r1i1p1f1
-  -member_r1i1p2f1
-  -member_r2i1p1f1
-  -member_r2i1p2f1
-  -member_r3i1p1f1
-  -member_r3i1p2f1
-  -member_r4i1p1f1
-  -member_r4i1p2f1
-  -member_r5i1p1f1
-  -member_r5i1p2f1
-  -member_r6i1p1f1
-  -member_r6i1p2f1
-  -member_r7i1p1f1
-  -member_r7i1p2f1
-  -member_r8i1p1f1
-  -member_r8i1p2f1
-  -member_r9i1p2f1
+CanESM5:
+  member_r10i1p2f1
+  member_r1i1p1f1
+  member_r1i1p2f1
+  member_r2i1p1f1
+  member_r2i1p2f1
+  member_r3i1p1f1
+  member_r3i1p2f1
+  member_r4i1p1f1
+  member_r4i1p2f1
+  member_r5i1p1f1
+  member_r5i1p2f1
+  member_r6i1p1f1
+  member_r6i1p2f1
+  member_r7i1p1f1
+  member_r7i1p2f1
+  member_r8i1p1f1
+  member_r8i1p2f1
+  member_r9i1p2f1
 
-GFDL-ESM4
-  -member_r1i1p1f1
+GFDL-ESM4:
+  member_r1i1p1f1
 
-MPI-ESM1-2-LR
-  -member_r11i1p1f1
-  -member_r12i1p1f1
-  -member_r14i1p1f1
-  -member_r15i1p1f1
-  -member_r16i1p1f1
-  -member_r22i1p1f1
-  -member_r23i1p1f1
-  -member_r26i1p1f1
-  -member_r27i1p1f1
+MPI-ESM1-2-LR:
+  member_r11i1p1f1
+  member_r12i1p1f1
+  member_r14i1p1f1
+  member_r15i1p1f1
+  member_r16i1p1f1
+  member_r22i1p1f1
+  member_r23i1p1f1
+  member_r26i1p1f1
+  member_r27i1p1f1
 
-UKESM1-0-LL
-
-  -member_r1i1p1f2
-  -member_r2i1p1f2
-  -member_r3i1p1f2
-  -member_r4i1p1f2
-  -member_r8i1p1f2
+UKESM1-0-LL:
+  member_r1i1p1f2
+  member_r2i1p1f2
+  member_r3i1p1f2
+  member_r4i1p1f2
+  member_r8i1p1f2
 
 Here is an example of how to open one of the pickle files:
 
