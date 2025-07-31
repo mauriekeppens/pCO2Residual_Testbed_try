@@ -77,7 +77,7 @@ UKESM1-0-LL:
   member_r4i1p1f2,
   member_r8i1p1f2
 
-Here is an example of how to open one of the pickle files on the OSN pod:
+Here is an example of how to open one of the pickle files from the OSN pod:
 
 df = pd.read_pickle('https://nyu1.osn.mghpcc.org/leap-pangeo-manual/pco2_all_members_1982-2022/post01_xgb_inputs/ACCESS-ESM1-5/member_r5i1p1f1/MLinput_ACCESS-ESM1-5_r5i1p1f1_mon_1x1_198202_202212.pkl')
 
