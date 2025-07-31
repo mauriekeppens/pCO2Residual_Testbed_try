@@ -7,7 +7,7 @@ Code to implement the pCO2-Residual method (Bennington et al. 2022; https://doi.
 This code is set up to be run on the LEAP Pangeo computing platform (see documentation here: https://leap-stc.github.io/intro.html)
 
 Brief summary on each notebook:
-- residual_utils: Files with supporting functions
+- residual_utils: Supporting functions
 - 00_regridding_members : CMIP6 member selection and re-gridding 
 - 01_create_ML_inputs : Creates a dataframe with all variables needed to run notebook 02
 - 02_xgboost : Reconstructs pCO2-Residual using XGBoost
