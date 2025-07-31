@@ -2,7 +2,7 @@
 
 !! Code and documentation in progress !!
 
-Code to implement the pCO2-Residual method (Bennington et al. 2022; https://doi.org/10.1029/2021ms002960) using the CMIP6 testbed (Heimdal et al., 2025; https://eartharxiv.org/repository/view/8958/).  
+Code to implement the pCO2-Residual method (Bennington et al. 2022; https://doi.org/10.1029/2021ms002960) using the CMIP6 testbed (Heimdal et al., 2025; https://iopscience.iop.org/article/10.1088/3049-4753/adddc3).  
 
 This code is set up to be run on the LEAP Pangeo computing platform (see documentation here: https://leap-stc.github.io/intro.html)
 
