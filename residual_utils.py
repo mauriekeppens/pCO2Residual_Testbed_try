@@ -521,7 +521,7 @@ def train_val_test_split(N, test_prop, val_prop, random_seeds, ens_count):
     """
     
     intermediate_idx, test_idx = train_test_split(range(N), test_size=test_prop, random_state=random_seeds[0,ens_count])
-    train_idx, val_idx = train_test_split(intermediate_idx, test_size=val_prop/(1-test_prop), random_state=random_seeds[1,ens_count])
+    train_idx, val_idx = train_test_split(intermediate_idx, test_size=val_prop/(1-test_prop), random_state=random_seeds[1,ens_count]) # make the train-val splits
     return intermediate_idx, train_idx, val_idx, test_idx
 
 def apply_splits(X, y, train_val_idx, train_idx, val_idx, test_idx):
